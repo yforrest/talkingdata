@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://http://www.talkinggame.com" id="TalkingData" version="1.2.20">
+    
+    <name>TalkingData</name>
+    
+    <asset src="www/TalkingData.js" target="js/TalkingData.js" />
+    
+    <!-- ios -->
+    <platform name="ios">
+        
+        <header-file src="src/ios/TalkingDataPlugin.h" />
+        <source-file src="src/ios/TalkingDataPlugin.m" />
+        <header-file src="src/ios/TalkingData.h" />
+        <source-file src="src/ios/libTalkingData.a" framework="true" />
+        
+        <config-file target="config.xml" parent="/widget/plugins">
+            <feature name="TalkingData">
+                <param name="ios-package" value="TalkingDataPlugin"/>
+            </feature>
+        </config-file>
+        
+        <framework src="Security.framework" />
+        <framework src="CoreTelephony.framework" />
+        <framework src="AdSupport.framework" weak="true" />
+        <framework src="libz.dylib" />
+        
+    </platform>
+    
+    <!-- android -->
+    <platform name="android">
+        
+        <source-file src="src/android/TalkingData.jar" target-dir="libs" />
+        <source-file src="src/android/TalkingDataPlugin.java" target-dir="src/com/talkingdata/analytics" />
+        
+        <config-file target="res/xml/config.xml" parent="/widget/plugins">
+            <feature name="TalkingData">
+                <param name="android-package" value="com.talkingdata.analytics.TalkingDataPlugin"/>
+            </feature>
+        </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        </config-file>
+        
+    </platform>
+    
+</plugin>
