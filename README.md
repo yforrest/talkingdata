@@ -10,4 +10,5 @@ TalkingData Analytics PhoneGap SDK
 2. 为了更准确的定位版本，调整初始化log的输出内容
 
 
+安装方法：
 cordova plugin add https://github.com/yforrest/talkingdata.git
