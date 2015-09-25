@@ -47,13 +47,14 @@
         return;
     }
     BOOL enabled = [arg0 boolValue];
-    [TalkingData openDebugLog:enabled];
+    // [TalkingData openDebugLog:enabled];
 }
 
 - (void)getDeviceId:(CDVInvokedUrlCommand*)command {
     NSString *deviceId = [TalkingData getDeviceID];
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:deviceId];
-    [self writeJavascript:[pluginResult toSuccessCallbackString:command.callbackId]];
+    // [self writeJavascript:[pluginResult toSuccessCallbackString:command.callbackId]];
+    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
 
 - (void)setExceptionReportEnabled:(CDVInvokedUrlCommand*)command {
@@ -138,7 +139,7 @@
     }
     
     if (self.currPageName) {
-        [TalkingData trackPageEnd:self.pageName];
+        [TalkingData trackPageEnd:pageName];
     }
     self.currPageName = pageName;
     [TalkingData trackPageBegin:pageName];
