@@ -69,7 +69,7 @@ public class TalkingDataPlugin extends CordovaPlugin {
 			return true;
 		} else if (action.equals("trackPage")) {
 			String pageName = args.getString(0);
-			if (currPageName == null || currPageName.trim().length() == 0) {
+			if (currPageName) {
 				TCAgent.onPageEnd(act, currPageName);
 			}
 			currPageName = pageName;
