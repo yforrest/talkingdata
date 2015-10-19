@@ -8,6 +8,9 @@ TalkingData Analytics Cordova (PhoneGap) SDK
 更新内容 ：  
 1. 1. 优化灵动事件控件的识别、触发。  
 
+注意：  
+iOS需要添加CoreMotion.framework、QuartzCore.framework  
+
 安装方法：  
 cordova plugin add https://github.com/yforrest/talkingdata.git  
 
