@@ -1,6 +1,6 @@
 //
 //  TalkingData.h
-//  TalkingData Version 2.0.5
+//  TalkingData Version 2.1.17
 //
 //  Created by Biao Hou on 11-11-14.
 //  Copyright (c) 2011年 tendcloud. All rights reserved.
@@ -17,6 +17,13 @@ typedef enum {
 
 @interface TalkingData: NSObject
 
+/**
+ *  @method setVersionWithCode:name:
+ *  设置应用的版本号和版本名称
+ *  @param  versionCode  应用程序的版本号    默认获取info.plist中CFBundleShortVersionString的值
+ *  @param  versionName  应用程序的版本名称   默认获取info.plist中CFBundleDisplayName的值
+ */
++ (void)setVersionWithCode:(NSString *)versionCode name:(NSString *)versionName;
 
 /**
  *	@method	sessionStarted:withChannelId:
